@@ -70,7 +70,7 @@ Item that are used as dropdowns, like the Pages option, don't need a `path`, but
 
 These are **internal** (private) routes. They will be rendered inside the app, using the default `containers/Layout`.
 
-If you want to add a route to, let's say, a landing page, you should add it to the `App`'s router ([src/App.js](src/App.js), exactly like `Login`, `CreateAccount` and other pages are routed.
+If you want to add a route to, let's say, a landing page, you should add it to the `App`'s router ([src/App.tsx](src/App.tsx), exactly like `Login`, `CreateAccount` and other pages are routed.
 
 #### How to add a new page to router?
 
@@ -116,7 +116,7 @@ Then add it to the `routes` array:
     },
 ```
 
-If you're asking where does this `/app` come from, it is from this line inside `src/App.js`, that renders the app:
+If you're asking where does this `/app` come from, it is from this line inside `src/App.tsx`, that renders the app:
 
 ```jsx
 <Route path="/app" component={Layout} />
