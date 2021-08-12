@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import InfoCard from '../components/Cards/InfoCard'
 import PageTitle from '../components/Typography/PageTitle'
-import { ChatIcon, ThumbsDownIcon, HeartIcon, SpamIcon } from '../icons'
-import RoundIcon from '../components/RoundIcon'
 import response from '../utils/demo/tableData'
 import {
   TableBody,
@@ -17,6 +14,8 @@ import {
   Pagination,
 } from '@windmill/react-ui'
 import {OverviewStats} from "../Overview/view/OverviewStats";
+import InfoCard from "../components/Cards/InfoCard";
+import RoundIcon from "../components/RoundIcon";
 
 
 function Dashboard() {

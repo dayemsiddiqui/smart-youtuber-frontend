@@ -3,7 +3,7 @@ import RoundIcon from "../../components/RoundIcon";
 import {ChatIcon, HeartIcon, SpamIcon, ThumbsDownIcon} from "../../icons";
 import React from "react";
 
-export const OverviewStats: React.FC<{}> = () => {
+export const OverviewStats = () => {
     return (
     <div className="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
         <InfoCard title="Spam" value="6389">
