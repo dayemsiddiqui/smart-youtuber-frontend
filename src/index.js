@@ -27,3 +27,17 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.register()
+
+/**
+ * PurgeCSS:
+ * text-red-500
+ * text-green-500
+ * text-yellow-500
+ * text-gray-500
+ * text-purple-500
+ * text-indigo-500
+ * text-blue-500
+ * text-pink-500
+ *
+
+ */
