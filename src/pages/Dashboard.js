@@ -14,8 +14,7 @@ import {
   Pagination,
 } from '@windmill/react-ui'
 import {OverviewStats} from "../Overview/view/OverviewStats";
-import InfoCard from "../components/Cards/InfoCard";
-import RoundIcon from "../components/RoundIcon";
+import ChannelIcon from './../assets/img/channel-icon.png'
 
 
 function Dashboard() {
@@ -57,7 +56,7 @@ function Dashboard() {
               <TableRow key={i}>
                 <TableCell>
                   <div className="flex items-center text-sm">
-                    <Avatar className="hidden mr-3 md:block" src="https://cdn.iconscout.com/icon/free/png-256/youtube-1578483-1342683.png" alt="User image" />
+                    <Avatar className="hidden mr-3 md:block" src={ChannelIcon} alt="User image" />
                     <div>
                       <p className="font-semibold">{user.name}</p>
                       <p className="text-xs text-gray-600 dark:text-gray-400">{user.job}</p>
