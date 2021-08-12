@@ -32,7 +32,7 @@ Windmill Dashboard React is built on top of [Windmill React UI](https://windmill
 
 ### Routing
 
-Routes in Windmill Dashboard are separated into two categories, sidebar ([routes/sidebar.js](src/routes/sidebar.js)) and general ([routes/index.js](src/routes/index.js)).
+Routes in Windmill Dashboard are separated into two categories, sidebar ([routes/sidebar.js](src/routes/sidebar.js)) and general ([routes/index.tsx](src/routes/index.tsx)).
 
 #### Sidebar routes
 
@@ -75,7 +75,7 @@ If you want to add a route to, let's say, a landing page, you should add it to t
 #### How to add a new page to router?
 
 1. Create your page inside `src/pages`, say `MyPage.js`;
-2. Add it to the global router (`src/routes/index.js`)
+2. Add it to the global router (`src/routes/index.tsx`)
 
 ```js
 const MyPage = lazy(() => import('../pages/MyPage'))
@@ -96,8 +96,8 @@ Then add it to the `routes` array:
 
 ```js
 {
-  path: '/app/my-page', // /app + the url you added in routes/index.js
-  icon: 'HomeIcon', // the component being exported from src/icons/index.js
+  path: '/app/my-page', // /app + the url you added in routes/index.tsx
+  icon: 'HomeIcon', // the component being exported from src/icons/index.tsx
   name: 'My Page', // name that appear in Sidebar
 },
 ```
