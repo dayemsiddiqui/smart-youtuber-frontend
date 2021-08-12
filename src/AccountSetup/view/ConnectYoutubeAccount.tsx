@@ -7,10 +7,10 @@ export const ConnectYoutubeAccount: React.FC<{}> = ({}) => (
   <>
     <div className="py-16 mx-auto">
       <div className="flex flex-col gap-8 justify-center">
-        <h1 className="text-5xl text-center">
+        <h1 className="text-5xl text-center dark:text-white">
           Get Started With Smart Youtuber
         </h1>
-        <p className="text-xl text-center mx-32">
+        <p className="text-xl text-center mx-32 dark:text-white">
           Setup your account to learn what your subscribers are demanding.
           Identify feedback and suggestions from your subscribers and filter out
           the spam.
