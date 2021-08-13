@@ -1,36 +1,18 @@
-import ChannelIcon from "../../assets/img/channel-icon.png";
 import React from "react";
-import {
-  TableBody,
-  TableContainer,
-  Table,
-  TableHeader,
-  TableCell,
-  TableRow,
-  TableFooter,
-  Avatar,
-  Badge,
-  Pagination,
-} from "@windmill/react-ui";
-import { useChannelList } from "../state/useChannelList";
+import { DataTable } from "../../components/DataTable";
+import ChannelListData from "../../utils/demo/ChannelListData";
+import { Avatar, Badge, TableCell } from "@windmill/react-ui";
+import ChannelIcon from "../../assets/img/channel-icon.png";
 
 export const ChannelList: React.FC<{}> = () => {
-  const { channels, totalResults, resultsPerPage, onPageChange } =
-    useChannelList();
   return (
-    <TableContainer>
-      <Table>
-        <TableHeader>
-          <tr>
-            <TableCell>Channel Name</TableCell>
-            <TableCell>Total Videos</TableCell>
-            <TableCell>Total Subscribers</TableCell>
-            <TableCell>Action</TableCell>
-          </tr>
-        </TableHeader>
-        <TableBody>
-          {channels.map((channel, i) => (
-            <TableRow key={i}>
+    <DataTable
+      data={ChannelListData}
+      config={{
+        columns: [
+          {
+            columnLabel: "Channel Name",
+            render: (row) => (
               <TableCell>
                 <div className="flex items-center text-sm">
                   <Avatar
@@ -39,36 +21,43 @@ export const ChannelList: React.FC<{}> = () => {
                     alt="User image"
                   />
                   <div>
-                    <p className="font-semibold">{channel.name}</p>
+                    <p className="font-semibold">{row.name}</p>
                     <p className="text-xs text-gray-600 dark:text-gray-400">
-                      {channel.job}
+                      {row.job}
                     </p>
                   </div>
                 </div>
               </TableCell>
+            ),
+          },
+          {
+            columnLabel: "Total Subscribers",
+            render: (row) => (
               <TableCell>
-                <span className="text-sm">$ {channel.amount}</span>
+                <span className="text-sm">{row.amount}</span>
               </TableCell>
+            ),
+          },
+          {
+            columnLabel: "Total Videos",
+            render: (row) => (
               <TableCell>
-                <Badge type={channel.status}>{channel.status}</Badge>
+                <Badge type={row.status}>{row.status}</Badge>
               </TableCell>
+            ),
+          },
+          {
+            columnLabel: "Actions",
+            render: (row) => (
               <TableCell>
                 <span className="text-sm">
-                  {new Date(channel.date).toLocaleDateString()}
+                  {new Date(row.date).toLocaleDateString()}
                 </span>
               </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      <TableFooter>
-        <Pagination
-          totalResults={totalResults}
-          resultsPerPage={resultsPerPage}
-          label="Table navigation"
-          onChange={onPageChange}
-        />
-      </TableFooter>
-    </TableContainer>
+            ),
+          },
+        ],
+      }}
+    />
   );
 };

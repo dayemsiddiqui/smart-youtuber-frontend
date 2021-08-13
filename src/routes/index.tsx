@@ -2,6 +2,7 @@ import { lazy } from "react";
 
 // use lazy for better code splitting, a.k.a. load faster
 const Dashboard = lazy(() => import("../Overview/view/Dashboard"));
+const VideoPage = lazy(() => import("../VideosPage/view/VideosPage"));
 const Forms = lazy(() => import("../pages/Forms"));
 const Cards = lazy(() => import("../pages/Cards"));
 const Charts = lazy(() => import("../pages/Charts"));
@@ -9,7 +10,6 @@ const Buttons = lazy(() => import("../pages/Buttons"));
 const Modals = lazy(() => import("../pages/Modals"));
 const Tables = lazy(() => import("../pages/Tables"));
 const Page404 = lazy(() => import("../pages/404"));
-const Blank = lazy(() => import("../pages/Blank"));
 
 /**
  * ⚠ These are internal routes!
@@ -19,12 +19,16 @@ const Blank = lazy(() => import("../pages/Blank"));
  * are routed.
  *
  * If you're looking for the links rendered in the SidebarContent, go to
- * `routes/sidebar.js`
+ * `routes/sidebar.ts`
  */
 const routes = [
   {
     path: "/dashboard", // the url
     component: Dashboard, // view rendered
+  },
+  {
+    path: "/videos",
+    component: VideoPage,
   },
   {
     path: "/forms",
@@ -53,10 +57,6 @@ const routes = [
   {
     path: "/404",
     component: Page404,
-  },
-  {
-    path: "/blank",
-    component: Blank,
   },
 ];
 

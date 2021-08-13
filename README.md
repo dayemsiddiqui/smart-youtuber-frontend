@@ -32,7 +32,7 @@ Windmill Dashboard React is built on top of [Windmill React UI](https://windmill
 
 ### Routing
 
-Routes in Windmill Dashboard are separated into two categories, sidebar ([routes/sidebar.js](src/routes/sidebar.js)) and general ([routes/index.tsx](src/routes/index.tsx)).
+Routes in Windmill Dashboard are separated into two categories, sidebar ([routes/sidebar.ts](src/routes/sidebar.ts)) and general ([routes/index.tsx](src/routes/index.tsx)).
 
 #### Sidebar routes
 
@@ -45,7 +45,7 @@ These are the routes that will show in the sidebar. They expect three properties
 Item that are used as dropdowns, like the Pages option, don't need a `path`, but expect a `routes` array of objects with `path` and `name`:
 
 ```js
-// sidebar.js
+// sidebar.ts
 {
   path: '/app/tables',
   icon: 'TablesIcon',
