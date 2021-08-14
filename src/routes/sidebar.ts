@@ -17,6 +17,20 @@ const routes = [
     name: "My Videos",
   },
   {
+    icon: "ChartsIcon",
+    name: "Insights",
+    routes: [
+      {
+        path: "/app/insights/spam",
+        name: "Spam",
+      },
+      {
+        path: "/app/insights/feedback",
+        name: "Feedback/Suggestions",
+      },
+    ],
+  },
+  {
     path: "/app/forms",
     icon: "FormsIcon",
     name: "Forms",
@@ -25,11 +39,6 @@ const routes = [
     path: "/app/cards",
     icon: "CardsIcon",
     name: "Cards",
-  },
-  {
-    path: "/app/charts",
-    icon: "ChartsIcon",
-    name: "Charts",
   },
   {
     path: "/app/buttons",

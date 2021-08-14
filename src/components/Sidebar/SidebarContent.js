@@ -48,13 +48,8 @@ function SidebarContent() {
           )
         )}
       </ul>
-      <div className="px-6 my-6">
-        <Button>
-          Create account
-          <span className="ml-2" aria-hidden="true">
-            +
-          </span>
-        </Button>
+      <div className="px-4 my-6">
+        <Button className="w-full">Logout</Button>
       </div>
     </div>
   );

@@ -2,6 +2,8 @@ import React from "react";
 import PageTitle from "../../components/Typography/PageTitle";
 import { DataTable } from "../../components/DataTable";
 import { TableCell } from "@windmill/react-ui";
+import { AvatarWithName } from "../../components/AvatarWithName";
+import ChannelIcon from "../../assets/img/channel-icon.png";
 
 export const VideoList: React.FC<{}> = () => (
   /**
@@ -20,12 +22,15 @@ export const VideoList: React.FC<{}> = () => (
       config={{
         columns: [
           {
-            columnLabel: "Thumbnail",
-            render: () => <TableCell> Help </TableCell>,
-          },
-          {
             columnLabel: "Title",
-            render: () => <TableCell> Help </TableCell>,
+            render: () => (
+              <TableCell>
+                <AvatarWithName
+                  name="productivity tips"
+                  ImageIcon={ChannelIcon}
+                />
+              </TableCell>
+            ),
           },
           {
             columnLabel: "Channel Name",

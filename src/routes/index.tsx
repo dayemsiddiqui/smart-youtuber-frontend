@@ -5,7 +5,8 @@ const Dashboard = lazy(() => import("../Overview/view/Dashboard"));
 const VideoPage = lazy(() => import("../VideosPage/view/VideosPage"));
 const Forms = lazy(() => import("../pages/Forms"));
 const Cards = lazy(() => import("../pages/Cards"));
-const Charts = lazy(() => import("../pages/Charts"));
+const Spam = lazy(() => import("../Insights/view/Spam"));
+const Feedback = lazy(() => import("../Insights/view/Feedback"));
 const Buttons = lazy(() => import("../pages/Buttons"));
 const Modals = lazy(() => import("../pages/Modals"));
 const Tables = lazy(() => import("../pages/Tables"));
@@ -31,16 +32,20 @@ const routes = [
     component: VideoPage,
   },
   {
+    path: "/insights/spam",
+    component: Spam,
+  },
+  {
+    path: "/insights/feedback",
+    component: Feedback,
+  },
+  {
     path: "/forms",
     component: Forms,
   },
   {
     path: "/cards",
     component: Cards,
-  },
-  {
-    path: "/charts",
-    component: Charts,
   },
   {
     path: "/buttons",
