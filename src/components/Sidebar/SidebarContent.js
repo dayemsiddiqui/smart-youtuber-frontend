@@ -4,7 +4,7 @@ import { NavLink, Route } from "react-router-dom";
 import * as Icons from "../../icons";
 import SidebarSubmenu from "./SidebarSubmenu";
 import { Button } from "@windmill/react-ui";
-import { signOut } from "../../Authentication/infra/authenticate";
+import { useAuthentication } from "../../Authentication";
 
 function Icon({ icon, ...props }) {
   const Icon = Icons[icon];
@@ -12,6 +12,7 @@ function Icon({ icon, ...props }) {
 }
 
 function SidebarContent() {
+  const { signOut } = useAuthentication();
   return (
     <div className="py-4 text-gray-500 dark:text-gray-400">
       <a

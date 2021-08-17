@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import app from "../infra/base";
 import firebase from "firebase";
+import { useAuthentication } from "../infra/useAuthentication";
 
 export const AuthContext = React.createContext<{
   currentUser: null | firebase.User;

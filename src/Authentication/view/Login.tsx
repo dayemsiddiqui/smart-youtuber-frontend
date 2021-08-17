@@ -5,14 +5,14 @@ import ImageLight from "../../assets/img/login-office.jpeg";
 import ImageDark from "../../assets/img/login-office-dark.jpeg";
 import { GithubIcon, TwitterIcon } from "../../icons";
 import { Label, Input, Button } from "@windmill/react-ui";
-import { signIn } from "../infra/authenticate";
 import { googleProvider } from "../infra/authMethod";
+import { useAuthentication } from "../infra/useAuthentication";
 
 const Login: React.FC<any> = ({ history }) => {
+  const { signIn } = useAuthentication(googleProvider);
   const authenticate = async () => {
-    const user = await signIn(googleProvider);
-    console.log({ user });
-    history.push("/");
+    await signIn();
+    history.push("/app");
   };
 
   const { currentUser } = useContext(AuthContext);
