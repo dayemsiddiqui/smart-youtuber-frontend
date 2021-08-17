@@ -4,6 +4,7 @@ import { NavLink, Route } from "react-router-dom";
 import * as Icons from "../../icons";
 import SidebarSubmenu from "./SidebarSubmenu";
 import { Button } from "@windmill/react-ui";
+import { signOut } from "../../Authentication/infra/authenticate";
 
 function Icon({ icon, ...props }) {
   const Icon = Icons[icon];
@@ -49,7 +50,9 @@ function SidebarContent() {
         )}
       </ul>
       <div className="px-4 my-6">
-        <Button className="w-full">Logout</Button>
+        <Button onClick={signOut} className="w-full">
+          Logout
+        </Button>
       </div>
     </div>
   );

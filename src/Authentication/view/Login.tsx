@@ -1,12 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React, { useCallback, useContext } from "react";
+import { Link, Redirect, withRouter } from "react-router-dom";
+import { AuthContext } from "../state/Auth";
 import ImageLight from "../../assets/img/login-office.jpeg";
 import ImageDark from "../../assets/img/login-office-dark.jpeg";
 import { GithubIcon, TwitterIcon } from "../../icons";
 import { Label, Input, Button } from "@windmill/react-ui";
+import { signIn } from "../infra/authenticate";
+import { googleProvider } from "../infra/authMethod";
 
-function Login() {
+const Login: React.FC<any> = ({ history }) => {
+  const authenticate = async () => {
+    const user = await signIn(googleProvider);
+    console.log({ user });
+    history.push("/");
+  };
+
+  const { currentUser } = useContext(AuthContext);
+  if (currentUser) {
+    return <Redirect to="/app" />;
+  }
   return (
     <div className="flex items-center min-h-screen p-6 bg-gray-50 dark:bg-gray-900">
       <div className="flex-1 h-full max-w-4xl mx-auto overflow-hidden bg-white rounded-lg shadow-xl dark:bg-gray-800">
@@ -54,9 +66,9 @@ function Login() {
 
               <hr className="my-8" />
 
-              <Button block layout="outline">
+              <Button block layout="outline" onClick={authenticate}>
                 <GithubIcon className="w-4 h-4 mr-2" aria-hidden="true" />
-                Github
+                Google
               </Button>
               <Button className="mt-4" block layout="outline">
                 <TwitterIcon className="w-4 h-4 mr-2" aria-hidden="true" />
@@ -85,6 +97,6 @@ function Login() {
       </div>
     </div>
   );
-}
+};
 
-export default Login;
+export default withRouter(Login);
