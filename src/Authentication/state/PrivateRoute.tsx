@@ -11,11 +11,7 @@ export const PrivateRoute: React.FC<any> = ({
     <Route
       {...rest}
       render={(routeProps) =>
-        !!currentUser ? (
-          <RouteComponent {...routeProps} />
-        ) : (
-          <Redirect to="/login" />
-        )
+        !!currentUser ? <RouteComponent {...routeProps} /> : <Redirect to="/" />
       }
     />
   );
