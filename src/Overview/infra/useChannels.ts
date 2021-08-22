@@ -5,15 +5,18 @@ import { ListChannelResponse } from "smart-youtuber-client-sdk/api/api";
 export const useChannels = () => {
   const { channelList } = useServerApi();
   const [channels, setChannels] = useState<ListChannelResponse[]>([]);
+  const [isPending, setIsPending] = useState(true);
   useEffect(() => {
     async function fetchChannelList() {
       const response = await channelList();
       const channelsResponse = response.data;
       setChannels(channelsResponse);
+      setIsPending(false);
     }
     fetchChannelList();
   }, []);
   return {
     channels,
+    isPending,
   };
 };
