@@ -1,12 +1,11 @@
 import { useServerApi } from "../../shared/infra/useServerApi";
 import { useLoadDataAsync } from "../../shared/infra/useLoadDataAsync";
 
-export const useChannels = () => {
-  const { channelList } = useServerApi();
-  const { data, isLoading } = useLoadDataAsync(channelList, []);
-
+export const useSpam = () => {
+  const { spamList } = useServerApi();
+  const { data, isLoading } = useLoadDataAsync(spamList, []);
   return {
-    channels: data,
+    spam: data,
     isLoading,
   };
 };

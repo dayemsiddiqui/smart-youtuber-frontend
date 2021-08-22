@@ -48,19 +48,20 @@
     "@release-it/conventional-changelog": "1.1.4",
     "@svgr/webpack": "5.4.0",
     "@types/url-join": "^4.0.1",
-    "autoprefixer": "9.8.0",
+    "autoprefixer": "^9.8.6",
     "commitizen": "4.1.2",
     "cross-env": "7.0.2",
     "cssnano": "4.1.10",
     "cz-conventional-changelog": "3.2.0",
     "env-cmd": "^10.1.0",
     "git-scripts": "^0.4.3",
+    "postcss": "^7.0.32",
     "postcss-cli": "7.1.1",
     "prettier": "2.3.2",
     "react-axe": "3.5.2",
     "release-it": "13.6.4",
     "surge": "^0.23.0",
-    "tailwindcss": "1.4.6"
+    "tailwindcss": "^1.4.6"
   },
   "keywords": [
     "windmill",

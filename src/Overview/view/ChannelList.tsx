@@ -1,19 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { DataTable } from "../../components/DataTable";
-import ChannelListData from "../../utils/demo/ChannelListData";
-import { Avatar, Badge, TableCell } from "@windmill/react-ui";
+import { Badge, TableCell } from "@windmill/react-ui";
 import ChannelIcon from "../../assets/img/channel-icon.png";
 import { AvatarWithName } from "../../components/AvatarWithName/view/AvatarWithName";
 import { useChannels } from "../infra/useChannels";
 import { Loader } from "../../components/Loader";
-import { useServerApi } from "../../shared/infra/useServerApi";
-import { ListChannelResponse } from "smart-youtuber-client-sdk/api/api";
 
 export const ChannelList: React.FC<{}> = () => {
-  const { channels, isPending } = useChannels();
-  console.log({ channels, isPending });
+  const { channels, isLoading } = useChannels();
+  console.log({ channels, isLoading });
   return (
-    <Loader isLoading={isPending}>
+    <Loader isLoading={isLoading}>
       <DataTable
         data={channels}
         config={{
