@@ -11,7 +11,7 @@ export const useYoutubeConnect = () => {
       },
     });
     const url = response.data.url;
-    window.location.replace(url);
+    window.location.replace(url + `&state=${idToken}`);
     console.log({ response });
   };
 
