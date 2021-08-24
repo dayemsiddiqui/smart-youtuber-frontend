@@ -7,7 +7,7 @@ const Dashboard: React.FC<{}> = () => {
   if (accountConnected) {
     return <OverviewPage />;
   } else {
-    return <ConnectYoutubeAccount connectAccount={connectAccount} />;
+    return <ConnectYoutubeAccount />;
   }
 };
 
