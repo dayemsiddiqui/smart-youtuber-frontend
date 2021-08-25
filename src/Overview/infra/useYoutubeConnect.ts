@@ -4,19 +4,6 @@ import { useEffect, useState } from "react";
 
 export const useYoutubeConnect = () => {
   const { apiClient } = useServerApi();
-  const [isConnected, setIsConnected] = useState(false);
-  const isConnectedToYoutube = async (): Promise<void> => {
-    const idToken = await auth().currentUser?.getIdToken(true);
-    const isConnectedResponse = await apiClient.get("auth/isConnected", {
-      headers: {
-        "x-id-token": idToken,
-      },
-    });
-    setIsConnected(!!isConnectedResponse.data.isConnected);
-  };
-  useEffect(() => {
-    isConnectedToYoutube();
-  }, []);
   const connect = async () => {
     const idToken = await auth().currentUser?.getIdToken(true);
     const response = await apiClient.get("auth/connect", {
@@ -31,6 +18,5 @@ export const useYoutubeConnect = () => {
 
   return {
     connect,
-    isConnected,
   };
 };

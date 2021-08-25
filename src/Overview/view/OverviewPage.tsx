@@ -10,3 +10,5 @@ export const OverviewPage: React.FC<{}> = () => (
     <ChannelList />
   </>
 );
+
+export default OverviewPage;
