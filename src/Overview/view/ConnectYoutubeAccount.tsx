@@ -5,8 +5,9 @@ import { Button } from "@windmill/react-ui";
 import { ApplicationHero } from "../../components/ApplicationHero";
 import { useYoutubeConnect } from "../infra/useYoutubeConnect";
 
-export const ConnectYoutubeAccount: React.FC<{}> = ({}) => {
-  const { connect } = useYoutubeConnect();
+export const ConnectYoutubeAccount: React.FC<{ connect: () => any }> = ({
+  connect,
+}) => {
   return (
     <ApplicationHero
       title="Get Started With Smart Youtuber"
