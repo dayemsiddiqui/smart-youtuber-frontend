@@ -1,5 +1,6 @@
 import { DefaultApiFactory } from "smart-youtuber-client-sdk/api/api";
 import axios from "axios";
+import { useAuthenticatedRequest } from "./useAuthenticatedRequest";
 export const useServerApi = () => {
   // Updated the backend server
   if (!process.env.REACT_APP_SERVER_BASE_URL) {
@@ -20,11 +21,12 @@ export const useServerApi = () => {
       baseURL,
       apiClient
     );
+
   return {
-    channelList,
-    spamList,
-    videoList,
-    isUserConnected,
+    channelList: useAuthenticatedRequest(channelList),
+    spamList: useAuthenticatedRequest(spamList),
+    videoList: useAuthenticatedRequest(videoList),
+    isUserConnected: useAuthenticatedRequest(isUserConnected),
     apiClient,
   };
 };

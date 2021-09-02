@@ -1,16 +1,11 @@
 import { useServerApi } from "../../shared/infra/useServerApi";
-import { useEffect, useState } from "react";
-import {
-  ListChannelResponse,
-  ListVideoResponse,
-} from "smart-youtuber-client-sdk/api/api";
-import { useLoadDataAsync } from "../../shared/infra/useLoadDataAsync";
+import { useQuery } from "react-query";
 
 export const useVideos = () => {
   const { videoList } = useServerApi();
-  const { data, isLoading } = useLoadDataAsync(videoList, []);
+  const { data: response, isLoading } = useQuery("videoList", videoList);
   return {
-    videos: data,
+    videos: response ? response.data : [],
     isLoading,
   };
 };

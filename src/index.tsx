@@ -7,17 +7,21 @@ import ThemedSuspense from "./components/ThemedSuspense";
 import { Windmill } from "@windmill/react-ui";
 import * as serviceWorker from "./serviceWorker";
 import theme from "./theme";
+import { QueryClient, QueryClientProvider } from "react-query";
+import { ReactQueryDevtools } from "react-query/devtools";
 
-// if (process.env.NODE_ENV !== 'production') {
-//   const axe = require('react-axe')
-//   axe(React, ReactDOM, 1000)
-// }
+const queryClient = new QueryClient();
+
+const isDevelopment = process.env.REACT_APP_NODE_ENV === "development";
 
 ReactDOM.render(
   <SidebarProvider>
     <Suspense fallback={<ThemedSuspense />}>
       <Windmill usePreferences theme={theme}>
-        <App />
+        <QueryClientProvider client={queryClient}>
+          <App />
+          {isDevelopment && <ReactQueryDevtools initialIsOpen={false} />}
+        </QueryClientProvider>
       </Windmill>
     </Suspense>
   </SidebarProvider>,

@@ -1,20 +1,13 @@
 import { useServerApi } from "../../shared/infra/useServerApi";
-import { useLoadDataAsync } from "../../shared/infra/useLoadDataAsync";
+import { useQuery } from "react-query";
 
 export const useChannels = () => {
   const { channelList } = useServerApi();
-  const { data, isLoading } = useLoadDataAsync(channelList, {
-    items: [],
-    nextPageToken: "",
-    prevPageToken: "",
-    pageInfo: {
-      totalResults: 0,
-      resultsPerPage: 0,
-    },
-  });
+
+  const { data: response, isLoading } = useQuery("channelsList", channelList);
 
   return {
-    channels: data.items,
+    channels: response ? response.data.items : [],
     isLoading,
   };
 };

@@ -1,11 +1,12 @@
 import { useServerApi } from "../../shared/infra/useServerApi";
-import { useLoadDataAsync } from "../../shared/infra/useLoadDataAsync";
+import { useAuthenticatedRequest } from "../../shared/infra/useAuthenticatedRequest";
+import { useQuery } from "react-query";
 
 export const useSpam = () => {
   const { spamList } = useServerApi();
-  const { data, isLoading } = useLoadDataAsync(spamList, []);
+  const { data: response, isLoading } = useQuery("spamList", spamList);
   return {
-    spam: data,
+    spam: response ? response.data : [],
     isLoading,
   };
 };

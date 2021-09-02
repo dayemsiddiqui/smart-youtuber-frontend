@@ -1,16 +1,18 @@
 import { useServerApi } from "../../shared/infra/useServerApi";
 import { useEffect, useState } from "react";
 import { auth } from "../../Authentication";
-import { useLoadDataAsync } from "../../shared/infra/useLoadDataAsync";
+import { useAuthenticatedRequest } from "../../shared/infra/useAuthenticatedRequest";
+import { useQuery } from "react-query";
 
 export const useConnected = () => {
   const { isUserConnected } = useServerApi();
-  const { data, isLoading } = useLoadDataAsync(isUserConnected, {
-    connected: false,
-  });
+  const { data: response, isLoading } = useQuery(
+    "isUserConnected",
+    isUserConnected
+  );
 
   return {
-    isConnected: data.connected,
+    isConnected: response ? response.data.connected : false,
     isLoading,
   };
 };
