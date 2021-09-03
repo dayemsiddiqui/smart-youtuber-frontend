@@ -9,7 +9,7 @@ import {
   OutlinePersonIcon,
   OutlineCogIcon,
   OutlineLogoutIcon,
-} from "../icons";
+} from "../assets/icons";
 import {
   Avatar,
   Badge,
