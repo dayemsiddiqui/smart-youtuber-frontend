@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import styled from "styled-components";
 import tw from "twin.macro";
 import { withRouter } from "react-router-dom";
-import { ReactComponent as SvgDecoratorBlob1 } from "../../assets/images/svg-decorator-blob-1.svg";
-import DesignIllustration from "../../assets/images/design-illustration-2.svg";
+import { ReactComponent as SvgDecoratorBlob1 } from "../../../assets/images/svg-decorator-blob-1.svg";
+import DesignIllustration from "../../../assets/images/design-illustration-2.svg";
 import { PrimaryButton } from "../misc/Buttons";
 import SmartYoutuberHeader from "../headers/SmartYoutuberHeader";
-import { useAuthentication } from "../../Authentication";
-import { googleProvider } from "../../Authentication/infra/authMethod";
-import { AuthContext } from "../../Authentication/state/Auth";
+import { useAuthentication } from "../../../Authentication";
+import { googleProvider } from "../../../Authentication/infra/authMethod";
+import { AuthContext } from "../../../Authentication/state/Auth";
 import { Redirect } from "react-router-dom";
 
 const Container = tw.div`relative`;

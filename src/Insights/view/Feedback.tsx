@@ -1,8 +1,8 @@
-import PageTitle from "../../components/Typography/PageTitle";
+import PageTitle from "../../lib/components/Typography/PageTitle";
 import React from "react";
 import { Button, TableCell } from "@windmill/react-ui";
-import { DataTable } from "../../components/DataTable";
-import { AvatarWithName } from "../../components/AvatarWithName";
+import { DataTable } from "../../lib/components/DataTable";
+import { AvatarWithName } from "../../lib/components/AvatarWithName";
 import ChannelIcon from "../../assets/img/channel-icon.png";
 
 export const Feedback: React.FC<{}> = () => {

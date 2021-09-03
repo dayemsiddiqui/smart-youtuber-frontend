@@ -1,11 +1,11 @@
 import React from "react";
-import PageTitle from "../../components/Typography/PageTitle";
-import { DataTable } from "../../components/DataTable";
+import PageTitle from "../../lib/components/Typography/PageTitle";
+import { DataTable } from "../../lib/components/DataTable";
 import { Button, TableCell } from "@windmill/react-ui";
 import ChannelIcon from "../../assets/img/channel-icon.png";
-import { AvatarWithName } from "../../components/AvatarWithName/view/AvatarWithName";
+import { AvatarWithName } from "../../lib/components/AvatarWithName/view/AvatarWithName";
 import { useSpam } from "../infra/useSpam";
-import { Loader } from "../../components/Loader";
+import { Loader } from "../../lib/components/Loader";
 
 const Spam: React.FC<{}> = () => {
   const { spam, isLoading } = useSpam();

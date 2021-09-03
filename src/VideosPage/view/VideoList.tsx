@@ -1,11 +1,11 @@
 import React from "react";
-import PageTitle from "../../components/Typography/PageTitle";
-import { DataTable } from "../../components/DataTable";
+import PageTitle from "../../lib/components/Typography/PageTitle";
+import { DataTable } from "../../lib/components/DataTable";
 import { TableCell, Button } from "@windmill/react-ui";
-import { AvatarWithName } from "../../components/AvatarWithName";
+import { AvatarWithName } from "../../lib/components/AvatarWithName";
 import ChannelIcon from "../../assets/img/channel-icon.png";
 import { useVideos } from "../infra/useVideos";
-import { Loader } from "../../components/Loader";
+import { Loader } from "../../lib/components/Loader";
 
 export const VideoList: React.FC<{}> = () => {
   const { videos, isLoading } = useVideos();

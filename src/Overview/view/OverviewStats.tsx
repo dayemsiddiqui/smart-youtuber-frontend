@@ -1,5 +1,5 @@
-import InfoCard from "../../components/Cards/InfoCard";
-import RoundIcon from "../../components/RoundIcon";
+import InfoCard from "../../lib/components/Cards/InfoCard";
+import RoundIcon from "../../lib/components/RoundIcon";
 import {
   ChatIcon,
   HeartIcon,

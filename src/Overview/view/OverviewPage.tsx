@@ -1,5 +1,5 @@
 import React from "react";
-import PageTitle from "../../components/Typography/PageTitle";
+import PageTitle from "../../lib/components/Typography/PageTitle";
 import { OverviewStats } from "./OverviewStats";
 import { ChannelList } from "./ChannelList";
 

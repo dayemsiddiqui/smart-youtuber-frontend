@@ -1,7 +1,7 @@
 import React from "react";
-import PageTitle from "../../components/Typography/PageTitle";
-import { InputWithButton } from "../../components/Forms/InputWithButton";
-import { DataTable } from "../../components/DataTable";
+import PageTitle from "../../lib/components/Typography/PageTitle";
+import { InputWithButton } from "../../lib/components/Forms/InputWithButton";
+import { DataTable } from "../../lib/components/DataTable";
 import { Button, TableCell } from "@windmill/react-ui";
 
 export const AnalyseVideo: React.FC<{}> = ({}) => (

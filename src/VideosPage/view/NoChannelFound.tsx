@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as NoVideosFound } from "../../assets/illustrations/noVideosFound.svg";
 
 import { Button } from "@windmill/react-ui";
-import { ApplicationHero } from "../../components/ApplicationHero";
+import { ApplicationHero } from "../../lib/components/ApplicationHero";
 
 export const NoChannelFound: React.FC<{ connectAccount: () => void }> = ({
   connectAccount,

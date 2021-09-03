@@ -5,7 +5,7 @@ import PageTitle from "../components/Typography/PageTitle";
 import SectionTitle from "../components/Typography/SectionTitle";
 import { Input, HelperText, Label, Select, Textarea } from "@windmill/react-ui";
 
-import { MailIcon } from "../assets/icons";
+import { MailIcon } from "../../assets/icons";
 
 function Forms() {
   return (

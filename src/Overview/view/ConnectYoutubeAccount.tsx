@@ -2,7 +2,7 @@ import React from "react";
 import { ReactComponent as AccountSetupIllustraion } from "../../assets/illustrations/accountSetup.svg";
 
 import { Button } from "@windmill/react-ui";
-import { ApplicationHero } from "../../components/ApplicationHero";
+import { ApplicationHero } from "../../lib/components/ApplicationHero";
 import { useYoutubeConnect } from "../infra/useYoutubeConnect";
 
 export const ConnectYoutubeAccount: React.FC<{}> = ({}) => {

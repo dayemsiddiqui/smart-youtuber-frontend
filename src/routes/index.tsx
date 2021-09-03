@@ -7,14 +7,13 @@ const ConnectToYoutube = lazy(
   () => import("../Overview/view/ConnectYoutubeAccount")
 );
 const VideoPage = lazy(() => import("../VideosPage/view/VideosPage"));
-const Forms = lazy(() => import("../pages/Forms"));
-const Cards = lazy(() => import("../pages/Cards"));
+const Forms = lazy(() => import("../lib/pages/Forms"));
+const Cards = lazy(() => import("../lib/pages/Cards"));
 const Spam = lazy(() => import("../Insights/view/Spam"));
 const Feedback = lazy(() => import("../Insights/view/Feedback"));
-const Buttons = lazy(() => import("../pages/Buttons"));
-const Modals = lazy(() => import("../pages/Modals"));
-const Tables = lazy(() => import("../pages/Tables"));
-const Page404 = lazy(() => import("../pages/404"));
+const Buttons = lazy(() => import("../lib/pages/Buttons"));
+const Modals = lazy(() => import("../lib/pages/Modals"));
+const Page404 = lazy(() => import("../lib/pages/404"));
 
 /**
  * ⚠ These are internal routes!
@@ -66,10 +65,6 @@ const routes = [
   {
     path: "/modals",
     component: Modals,
-  },
-  {
-    path: "/tables",
-    component: Tables,
   },
   {
     path: "/404",

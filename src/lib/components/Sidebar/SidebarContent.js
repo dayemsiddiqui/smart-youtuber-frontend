@@ -1,10 +1,10 @@
 import React from "react";
-import routes from "../../routes/sidebar";
+import routes from "../../../routes/sidebar";
 import { NavLink, Route } from "react-router-dom";
-import * as Icons from "../../assets/icons";
+import * as Icons from "../../../assets/icons";
 import SidebarSubmenu from "./SidebarSubmenu";
 import { Button } from "@windmill/react-ui";
-import { useAuthentication } from "../../Authentication";
+import { useAuthentication } from "../../../Authentication";
 
 function Icon({ icon, ...props }) {
   const Icon = Icons[icon];

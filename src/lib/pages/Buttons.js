@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import { HeartIcon, EditIcon } from "../assets/icons";
+import { HeartIcon, EditIcon } from "../../assets/icons";
 
 import PageTitle from "../components/Typography/PageTitle";
 import SectionTitle from "../components/Typography/SectionTitle";
