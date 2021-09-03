@@ -4,7 +4,7 @@ import routes from "../routes";
 
 import Sidebar from "../lib/components/Sidebar";
 import Header from "../lib/components/Header";
-import Main from "../containers/Main";
+import Main from "./Main";
 import ThemedSuspense from "../lib/components/ThemedSuspense";
 import { SidebarContext } from "../context/SidebarContext";
 
