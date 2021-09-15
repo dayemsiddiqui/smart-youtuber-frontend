@@ -11,28 +11,23 @@ export const useServerApi = () => {
   const apiClient = axios.create({
     baseURL: baseURL,
   });
-  const {
-    channelList,
-    spamList,
-    videoList,
-    isUserConnected,
-    videosControllerAnalyseVideo,
-  } = DefaultApiFactory(
-    {
-      isJsonMime(mime: string): boolean {
-        return true;
+  const { channelList, spamList, videoList, isUserConnected, analyseVideo } =
+    DefaultApiFactory(
+      {
+        isJsonMime(mime: string): boolean {
+          return true;
+        },
       },
-    },
-    baseURL,
-    apiClient
-  );
+      baseURL,
+      apiClient
+    );
 
   return {
     channelList: useAuthenticatedRequest(channelList),
     spamList: useAuthenticatedRequest(spamList),
     videoList: useAuthenticatedRequest(videoList),
     isUserConnected: useAuthenticatedRequest(isUserConnected),
-    analyseVideo: videosControllerAnalyseVideo,
+    analyseVideo: analyseVideo,
     apiClient,
   };
 };
