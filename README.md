@@ -32,7 +32,7 @@ Windmill Dashboard React is built on top of [Windmill React UI](https://windmill
 
 ### Routing
 
-Routes in Windmill Dashboard are separated into two categories, sidebar ([routes/sidebar.ts](src/routes/sidebar.ts)) and general ([routes/index.tsx](src/routes/index.tsx)).
+Routes in Windmill Dashboard are separated into two categories, sidebar ([routes/sidebar.ts](src/apps/DashboardApp/routes/sidebar.ts)) and general ([routes/index.tsx](src/apps/DashboardApp/routes/index.tsx)).
 
 #### Sidebar routes
 
@@ -70,7 +70,7 @@ Item that are used as dropdowns, like the Pages option, don't need a `path`, but
 
 These are **internal** (private) routes. They will be rendered inside the app, using the default `containers/Layout`.
 
-If you want to add a route to, let's say, a landing page, you should add it to the `App`'s router ([src/App.tsx](src/App.tsx), exactly like `Login`, `CreateAccount` and other pages are routed.
+If you want to add a route to, let's say, a landing page, you should add it to the `DashboardApp`'s router ([src/DashboardApp.tsx](src/apps/DashboardApp/DashboardApp.tsx), exactly like `Login`, `CreateAccount` and other pages are routed.
 
 #### How to add a new page to router?
 
@@ -116,7 +116,7 @@ Then add it to the `routes` array:
     },
 ```
 
-If you're asking where does this `/app` come from, it is from this line inside `src/App.tsx`, that renders the app:
+If you're asking where does this `/app` come from, it is from this line inside `src/DashboardApp.tsx`, that renders the app:
 
 ```jsx
 <Route path="/app" component={Layout} />
@@ -124,7 +124,7 @@ If you're asking where does this `/app` come from, it is from this line inside `
 
 ---
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React DashboardApp](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
 
@@ -165,7 +165,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more in the [Create React DashboardApp documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
@@ -177,7 +177,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/co
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+### Making a Progressive Web DashboardApp
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 

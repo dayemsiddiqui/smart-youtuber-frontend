@@ -1,5 +1,5 @@
 import React from "react";
-import routes from "../../../routes/sidebar";
+import routes from "../../../apps/DashboardApp/routes/sidebar";
 import { NavLink, Route } from "react-router-dom";
 import * as Icons from "../../../assets/icons";
 import SidebarSubmenu from "./SidebarSubmenu";

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { SidebarContext } from "../../context/SidebarContext";
+import { SidebarContext } from "../../apps/DashboardApp/context/SidebarContext";
 import {
   SearchIcon,
   MoonIcon,
