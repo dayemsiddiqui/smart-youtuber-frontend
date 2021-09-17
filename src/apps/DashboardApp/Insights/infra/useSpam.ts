@@ -1,5 +1,5 @@
-import { useServerApi } from "../../../../shared/infra/useServerApi";
-import { useAuthenticatedRequest } from "../../../../shared/infra/useAuthenticatedRequest";
+import { useServerApi } from "../../shared/infra/useServerApi";
+import { useAuthenticatedRequest } from "../../../../Authentication/infra/useAuthenticatedRequest";
 import { useQuery } from "react-query";
 
 export const useSpam = () => {

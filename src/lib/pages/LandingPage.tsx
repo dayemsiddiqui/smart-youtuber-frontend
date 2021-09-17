@@ -10,6 +10,7 @@ import { useAuthentication } from "../../Authentication";
 import { googleProvider } from "../../Authentication/infra/authMethod";
 import { AuthContext } from "../../Authentication/state/Auth";
 import { Redirect } from "react-router-dom";
+import { useTitle } from "../../hooks/useTitle";
 
 const Container = tw.div`relative`;
 const TwoColumn = tw.div`flex flex-col lg:flex-row lg:items-center max-w-screen-xl mx-auto py-20 md:py-24`;
@@ -28,10 +29,13 @@ const LandingPage: React.FC<any> = ({ history }) => {
     history.push("/app");
   };
 
+  useTitle("Smart Youtuber");
+
   const { currentUser } = useContext(AuthContext);
   if (currentUser) {
     return <Redirect to="/app" />;
   }
+
   return (
     <>
       <SmartYoutuberHeader roundedHeaderButton={false} />

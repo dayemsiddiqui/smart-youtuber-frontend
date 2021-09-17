@@ -7,12 +7,15 @@ import Header from "../../../lib/components/Header";
 import Main from "./Main";
 import ThemedSuspense from "../../../lib/components/ThemedSuspense";
 import { SidebarContext } from "../context/SidebarContext";
+import { useTitle } from "../../../hooks/useTitle";
 
 const Page404 = lazy(() => import("../../../lib/pages/404"));
 
 function Layout() {
   const { isSidebarOpen, closeSidebar } = useContext(SidebarContext);
   let location = useLocation();
+
+  useTitle("Smart Youtuber | Dashboard");
 
   useEffect(() => {
     closeSidebar();

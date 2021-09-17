@@ -1,4 +1,4 @@
-import { useServerApi } from "../../../../shared/infra/useServerApi";
+import { useServerApi } from "../../shared/infra/useServerApi";
 import { useQuery } from "react-query";
 
 export const useVideos = () => {

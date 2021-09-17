@@ -1,4 +1,4 @@
-import { useServerApi } from "../../../../shared/infra/useServerApi";
+import { useServerApi } from "../../shared/infra/useServerApi";
 import { auth } from "../../../../Authentication";
 import { useEffect, useState } from "react";
 

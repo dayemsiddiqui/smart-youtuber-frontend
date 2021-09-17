@@ -1,6 +1,6 @@
-import { useServerApi } from "../../../../shared/infra/useServerApi";
+import { useServerApi } from "../../shared/infra/useServerApi";
 import { useMutation } from "react-query";
-import { useAuthenticatedRequest } from "../../../../shared/infra/useAuthenticatedRequest";
+import { useAuthenticatedRequest } from "../../../../Authentication/infra/useAuthenticatedRequest";
 import { auth } from "../../../../Authentication";
 
 export const useAnalyseVideo = () => {
