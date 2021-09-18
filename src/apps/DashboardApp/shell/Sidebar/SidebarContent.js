@@ -1,10 +1,10 @@
 import React from "react";
-import routes from "../../../apps/DashboardApp/routes/sidebar";
+import routes from "../../routes/sidebar";
 import { NavLink, Route } from "react-router-dom";
-import * as Icons from "../../../assets/icons";
+import * as Icons from "../../../../assets/icons";
 import SidebarSubmenu from "./SidebarSubmenu";
 import { Button } from "@windmill/react-ui";
-import { useAuthentication } from "../../../Authentication";
+import { useAuthentication } from "../../../../Authentication";
 
 function Icon({ icon, ...props }) {
   const Icon = Icons[icon];
@@ -12,7 +12,6 @@ function Icon({ icon, ...props }) {
 }
 
 function SidebarContent() {
-  const { signOut } = useAuthentication();
   return (
     <div className="py-4 text-gray-500 dark:text-gray-400">
       <a
@@ -50,11 +49,6 @@ function SidebarContent() {
           )
         )}
       </ul>
-      <div className="px-4 my-6">
-        <Button onClick={signOut} className="w-full">
-          Logout
-        </Button>
-      </div>
     </div>
   );
 }

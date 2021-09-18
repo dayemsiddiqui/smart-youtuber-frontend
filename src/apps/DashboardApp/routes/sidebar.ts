@@ -17,70 +17,9 @@ const routes = [
     name: "My Videos",
   },
   {
+    path: "/app/spam",
     icon: "ChartsIcon",
-    name: "Insights",
-    routes: [
-      {
-        path: "/app/insights/spam",
-        name: "Spam",
-      },
-      {
-        path: "/app/insights/feedback",
-        name: "Feedback/Suggestions",
-      },
-    ],
-  },
-  {
-    path: "/app/forms",
-    icon: "FormsIcon",
-    name: "Forms",
-  },
-  {
-    path: "/app/cards",
-    icon: "CardsIcon",
-    name: "Cards",
-  },
-  {
-    path: "/app/buttons",
-    icon: "ButtonsIcon",
-    name: "Buttons",
-  },
-  {
-    path: "/app/modals",
-    icon: "ModalsIcon",
-    name: "Modals",
-  },
-  {
-    path: "/app/tables",
-    icon: "TablesIcon",
-    name: "Tables",
-  },
-  {
-    icon: "PagesIcon",
-    name: "Pages",
-    routes: [
-      // submenu
-      {
-        path: "/login",
-        name: "Login",
-      },
-      {
-        path: "/create-account",
-        name: "Create account",
-      },
-      {
-        path: "/forgot-password",
-        name: "Forgot password",
-      },
-      {
-        path: "/app/404",
-        name: "404",
-      },
-      {
-        path: "/app/videos",
-        name: "My Videos",
-      },
-    ],
+    name: "Spam",
   },
 ];
 

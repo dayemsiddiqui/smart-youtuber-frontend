@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { SidebarContext } from "../../apps/DashboardApp/context/SidebarContext";
+import { SidebarContext } from "../context/SidebarContext";
 import {
   SearchIcon,
   MoonIcon,
@@ -9,7 +9,7 @@ import {
   OutlinePersonIcon,
   OutlineCogIcon,
   OutlineLogoutIcon,
-} from "../../assets/icons";
+} from "../../../assets/icons";
 import {
   Avatar,
   Badge,
@@ -18,10 +18,13 @@ import {
   DropdownItem,
   WindmillContext,
 } from "@windmill/react-ui";
+import { useAuthentication } from "../../../Authentication";
 
 function Header() {
   const { mode, toggleMode } = useContext(WindmillContext);
   const { toggleSidebar } = useContext(SidebarContext);
+
+  const { signOut } = useAuthentication();
 
   const [isNotificationsMenuOpen, setIsNotificationsMenuOpen] = useState(false);
   const [isProfileMenuOpen, setIsProfileMenuOpen] = useState(false);
@@ -47,32 +50,23 @@ function Header() {
         </button>
         {/* <!-- Search input --> */}
         <div className="flex justify-center flex-1 lg:mr-32">
-          <div className="relative w-full max-w-xl mr-6 focus-within:text-purple-500">
-            <div className="absolute inset-y-0 flex items-center pl-2">
-              <SearchIcon className="w-4 h-4" aria-hidden="true" />
-            </div>
-            <Input
-              className="pl-8 text-gray-700"
-              placeholder="Search for channels"
-              aria-label="Search"
-            />
-          </div>
+          <div className="relative w-full max-w-xl mr-6 focus-within:text-purple-500"></div>
         </div>
         <ul className="flex items-center flex-shrink-0 space-x-6">
           {/* <!-- Theme toggler --> */}
-          <li className="flex">
-            <button
-              className="rounded-md focus:outline-none focus:shadow-outline-purple"
-              onClick={toggleMode}
-              aria-label="Toggle color mode"
-            >
-              {mode === "dark" ? (
-                <SunIcon className="w-5 h-5" aria-hidden="true" />
-              ) : (
-                <MoonIcon className="w-5 h-5" aria-hidden="true" />
-              )}
-            </button>
-          </li>
+          {/*<li className="flex">*/}
+          {/*  <button*/}
+          {/*    className="rounded-md focus:outline-none focus:shadow-outline-purple"*/}
+          {/*    onClick={toggleMode}*/}
+          {/*    aria-label="Toggle color mode"*/}
+          {/*  >*/}
+          {/*    {mode === "dark" ? (*/}
+          {/*      <SunIcon className="w-5 h-5" aria-hidden="true" />*/}
+          {/*    ) : (*/}
+          {/*      <MoonIcon className="w-5 h-5" aria-hidden="true" />*/}
+          {/*    )}*/}
+          {/*  </button>*/}
+          {/*</li>*/}
           {/* <!-- Notifications menu --> */}
           <li className="relative">
             <button
@@ -138,7 +132,7 @@ function Header() {
                 <OutlineCogIcon className="w-4 h-4 mr-3" aria-hidden="true" />
                 <span>Settings</span>
               </DropdownItem>
-              <DropdownItem onClick={() => alert("Log out!")}>
+              <DropdownItem onClick={signOut}>
                 <OutlineLogoutIcon
                   className="w-4 h-4 mr-3"
                   aria-hidden="true"

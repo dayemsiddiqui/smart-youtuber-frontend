@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
 import "./assets/css/tailwind.output.css";
-import DashboardApp from "./apps/DashboardApp/DashboardApp";
+import App from "./App";
 import { SidebarProvider } from "./apps/DashboardApp/context/SidebarContext";
 import ThemedSuspense from "./lib/components/ThemedSuspense";
 import { Windmill } from "@windmill/react-ui";
@@ -19,7 +19,7 @@ ReactDOM.render(
     <Suspense fallback={<ThemedSuspense />}>
       <Windmill usePreferences theme={theme}>
         <QueryClientProvider client={queryClient}>
-          <DashboardApp />
+          <App />
           {isDevelopment && <ReactQueryDevtools initialIsOpen={false} />}
         </QueryClientProvider>
       </Windmill>
