@@ -33,6 +33,7 @@
     "classnames": "2.2.6",
     "faker": "4.1.0",
     "firebase": "^8.9.1",
+    "framer-motion": "^4.1.17",
     "postcss-loader": "^6.1.1",
     "postcss-nested": "^5.0.6",
     "react": "^16.13.1",
