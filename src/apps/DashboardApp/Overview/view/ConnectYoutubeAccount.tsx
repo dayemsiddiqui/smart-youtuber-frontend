@@ -4,6 +4,9 @@ import { ReactComponent as AccountSetupIllustraion } from "../../../../assets/il
 import { Button } from "@windmill/react-ui";
 import { ApplicationHero } from "../../../../lib/components/ApplicationHero";
 import { useYoutubeConnect } from "../infra/useYoutubeConnect";
+import { LandingPageIllustration } from "../../../../assets/images/LandingPageIllustration";
+import { IllustrationContainer } from "../../../../lib/components/IllustrationContainer";
+import { ConnectAccountIllustration } from "../../../../assets/illustrations/ConnectAccountIllustration";
 
 export const ConnectYoutubeAccount: React.FC<{}> = ({}) => {
   const { connect } = useYoutubeConnect();
@@ -17,7 +20,9 @@ export const ConnectYoutubeAccount: React.FC<{}> = ({}) => {
       <Button onClick={connect} className="max-w-xs mx-auto">
         Connect to Youtube
       </Button>
-      <AccountSetupIllustraion className="mx-auto" />
+      <IllustrationContainer className="mx-auto">
+        <ConnectAccountIllustration />
+      </IllustrationContainer>
     </ApplicationHero>
   );
 };
