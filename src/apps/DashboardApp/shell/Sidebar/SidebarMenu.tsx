@@ -37,7 +37,7 @@ export const SidebarMenu: React.FC<{
     <motion.li
       whileHover="visible"
       variants={sidebarMenuButton}
-      className={`relative px-6 py-2 hover:${selectedColor} hover:text-white  shadow-inner`}
+      className={`relative px-6 py-2 hover:${selectedColor} hover:text-white  shadow`}
     >
       <div>
         <NavLink
