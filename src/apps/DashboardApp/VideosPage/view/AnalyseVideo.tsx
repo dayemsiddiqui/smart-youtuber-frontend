@@ -2,8 +2,9 @@ import React from "react";
 import PageTitle from "../../../../lib/components/Typography/PageTitle";
 import { InputWithButton } from "../../../../lib/components/Forms/InputWithButton";
 import { DataTable } from "../../../../lib/components/DataTable";
-import { Button, TableCell } from "@windmill/react-ui";
+import { TableCell } from "@windmill/react-ui";
 import { useAnalyseVideo } from "../infra/useAnalyseVideo";
+import { Button } from "../../../../lib/components/Buttons/Button";
 
 export const AnalyseVideo: React.FC<{}> = ({}) => {
   const { analyse, isLoading, isSuccess } = useAnalyseVideo();
@@ -57,7 +58,9 @@ export const AnalyseVideo: React.FC<{}> = ({}) => {
                 columnLabel: "Action",
                 render: () => (
                   <TableCell>
-                    <Button size="small"> View Results </Button>{" "}
+                    <Button className="w-0" onClick={() => {}}>
+                      View Results
+                    </Button>
                   </TableCell>
                 ),
               },

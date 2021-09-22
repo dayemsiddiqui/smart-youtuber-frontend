@@ -3,13 +3,19 @@ import React from "react";
 export interface ButtonProps {
   children?: React.ReactNode;
   onClick: () => void;
+  [key: string]: any;
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
+export const Button: React.FC<ButtonProps> = ({
+  children,
+  onClick,
+  ...props
+}) => {
   return (
     <button
+      {...props}
       onClick={onClick}
-      className="absolute inset-y-0 right-0 px-4 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-purple-600 border border-transparent rounded-r-md active:bg-purple-600 hover:bg-purple-700 focus:outline-none focus:shadow-outline-purple"
+      className="py-2 px-3 w-auto text-sm text-white rounded-md bg-brand-green shadow-md block md:inline-block active:bg-brand-green-light hover:bg-brand-green-dark focus:outline-none focus:shadow-outline-green"
     >
       {children}
     </button>

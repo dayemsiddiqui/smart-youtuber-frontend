@@ -15,7 +15,12 @@ export const InputWithButton: React.FC<{
       <Label label="Video URL" />
       <div className="relative text-gray-500 focus-within:text-purple-600">
         <TextInput placeholder={placeholder} />
-        <Button onClick={onClick}> Analyse </Button>
+        <button
+          className="absolute inset-y-0 right-0 px-4 text-sm font-medium leading-5 text-white transition-colors duration-150 bg-brand-green border border-transparent rounded-r-md active:bg-brand-green-light hover:bg-brand-green-dark focus:outline-none focus:shadow-outline-green"
+          onClick={onClick}
+        >
+          Analyse
+        </button>
       </div>
     </InputButtonContainer>
   );
