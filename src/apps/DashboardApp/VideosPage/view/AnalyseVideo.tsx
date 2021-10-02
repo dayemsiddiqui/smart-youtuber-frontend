@@ -15,7 +15,7 @@ export const AnalyseVideo: React.FC<{}> = ({}) => {
         buttonLabel="Analyse Video"
         placeholder="https://www.youtube.com/watch?v=fbEubYDGLYY"
         inputLabel="Video URL:"
-        onClick={() => analyse("exampleVideoID")}
+        onSubmit={(data) => analyse(data.videoID)}
       />
       <div className="py-16">
         <h3 className="my-6 text-lg font-semibold text-gray-700 dark:text-gray-200">

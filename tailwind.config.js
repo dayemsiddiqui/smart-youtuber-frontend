@@ -2,7 +2,15 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const windmill = require("@windmill/react-ui/config");
 
 module.exports = windmill({
-  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  purge: {
+    content: ["./src/**/*.{js,jsx,ts,tsx}"],
+    safelist: [
+      "hover:bg-brand-red",
+      "hover:bg-brand-blue",
+      "hover:bg-brand-green",
+      "hover:bg-brand-yellow",
+    ],
+  },
   theme: {
     extend: {
       fontFamily: {
